@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:shape="rectangle"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <GridLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fullname"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-black"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <EditText
+            android:id="@+id/inputText"
+            android:layout_width="394dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:autofillHints=""
+            android:background="@drawable/customtext"
+            android:ems="10"
+            android:hint="@string/enter_your_fullname"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:layout_marginTop="5dp"
+            android:shape="rectangle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:ignore="LabelFor" />
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gross_salary"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/inputText"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <EditText
+            android:id="@+id/inputText1"
+            android:layout_width="394dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"
+            android:autofillHints=""
+            android:background="@drawable/customtext"
+            android:ems="10"
+            android:hint="@string/enter_gross_salary"
+            android:inputType="number"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView1" />
+        <Button
+            android:id="@+id/submit"
+            android:backgroundTint="#FF1A3DEC"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="@string/calculate"
+            android:layout_marginTop="3dp"
+            android:onClick="onUpdate"
+            app:layout_constraintTop_toBottomOf="@+id/inputText1"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="4dp"
+            android:background="#c0c0c0"/>
+
+        <TextView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="321dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-black"
+            tools:ignore="NestedScrolling" />
+    </GridLayout>
+</ScrollView>

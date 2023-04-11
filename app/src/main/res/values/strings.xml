@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name"> LAB2_20522104</string>
+    <string name="please_enter_full_name" />
+    <string name="please_enter_gross_salary" />
+    <string name="gross_salary">Gross Salary</string>
+    <string name="enter_your_fullname">\ \ Please enter full name</string>
+    <string name="calculate">Calculate</string>
+    <string name="fullname">Fullname</string>
+    <string name="enter_gross_salary">\ \ Please enter gross salary</string>
+
+</resources>
