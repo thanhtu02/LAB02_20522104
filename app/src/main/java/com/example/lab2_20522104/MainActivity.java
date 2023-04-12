@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView, textView1, list;
     EditText inputText, inputText1;
     Button submit;
+    SharedPreferences sharedPreferences;
 
 
     @SuppressLint("MissingInflatedId")
@@ -33,10 +34,9 @@ public class MainActivity extends AppCompatActivity {
         list = findViewById(R.id.list); //danh sach ten - net salary sau khi onclick vao btn calculate
         submit = findViewById(R.id.submit);
 
-        SharedPreferences sharePreferences = getSharedPreferences("dataSalary", MODE_PRIVATE);
-        inputText.setText(sharePreferences.getString("name", ""));
-        inputText1.setText(sharePreferences.getString("netsalary", ""));
-
+        sharedPreferences = getSharedPreferences("dataSalary", MODE_PRIVATE);
+        inputText.setText(sharedPreferences.getString("name", ""));
+        inputText1.setText(sharedPreferences.getString("netsalary",""));
     }
 
     @SuppressLint("SetTextI18n")
@@ -53,21 +53,19 @@ public class MainActivity extends AppCompatActivity {
         double temp2 = dependentCost + (temp - dependentCost) * (1 - 0.05);
         String netSalary2 = String.valueOf(temp2);
 
-        SharedPreferences sharePreferences = null;
         if (temp <= dependentCost) {
-            list.setText(inputText.getText() + " - Net Salary: " + netSalary1);
-            assert false;
-            SharedPreferences.Editor editor = sharePreferences.edit();
+            SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("name", name);
             editor.putString("netsalary", netSalary1);
             editor.apply();
+            list.setText(inputText.getText() + " - Net Salary: " + netSalary1);
+
         } else {
-            list.setText(inputText.getText() + " - Net Salary: " + netSalary2);
-            assert false;
-            SharedPreferences.Editor editor = sharePreferences.edit();
+            SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("name", name);
             editor.putString("netsalary", netSalary2);
             editor.apply();
+            list.setText(inputText.getText() + " - Net Salary: " + netSalary2);
         }
     }
 }
